@@ -1,0 +1,9 @@
+Service_type,category,Fund,Loan,CD,Bank_Account,Mortgage
+Customer,category,Student,Business,Other,Doctor,Professional
+Monthly_fee,real
+Advertisement_budget,real
+Size,category,Small,Large,Medium
+Promotion,category,Web&Email,Full,Web,None
+Interest_rate,real
+Period,real
+Label,result,0,1

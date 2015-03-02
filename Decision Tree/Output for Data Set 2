@@ -1,0 +1,122 @@
+====== CROSS VALIDATION PROCESS ======
+
+Cross-validation Process 1/8
+140 cases tested. True: 134, False: 6. Accuracy: 0.9571428571428572
+20 cases tested. True: 16, False: 4. Accuracy: 0.8
+
+Cross-validation Process 2/8
+140 cases tested. True: 137, False: 3. Accuracy: 0.9785714285714285
+20 cases tested. True: 20, False: 0. Accuracy: 1.0
+
+Cross-validation Process 3/8
+140 cases tested. True: 139, False: 1. Accuracy: 0.9928571428571429
+20 cases tested. True: 19, False: 1. Accuracy: 0.95
+
+Cross-validation Process 4/8
+140 cases tested. True: 139, False: 1. Accuracy: 0.9928571428571429
+20 cases tested. True: 18, False: 2. Accuracy: 0.9
+
+Cross-validation Process 5/8
+140 cases tested. True: 139, False: 1. Accuracy: 0.9928571428571429
+20 cases tested. True: 18, False: 2. Accuracy: 0.9
+
+Cross-validation Process 6/8
+140 cases tested. True: 139, False: 1. Accuracy: 0.9928571428571429
+20 cases tested. True: 18, False: 2. Accuracy: 0.9
+
+Cross-validation Process 7/8
+140 cases tested. True: 140, False: 0. Accuracy: 1.0
+20 cases tested. True: 19, False: 1. Accuracy: 0.95
+
+Cross-validation Process 8/8
+140 cases tested. True: 138, False: 2. Accuracy: 0.9857142857142858
+20 cases tested. True: 18, False: 2. Accuracy: 0.9
+
+Average accuracy for cross validation: 0.9125000000000001
+
+====== DECISION TREE ======
+[BRANCH ON Advertisement_budget], info: 0.4518, size: 160
+== Advertisement_budget < 2.4
+	[BRANCH ON Period], info: 0.2255, size: 95
+	== Period < 65.0
+		[BRANCH ON Period], info: 0.2396, size: 36
+		== Period < 15.0
+			== [TERMINATE NODE] Label: 1, size:9
+		== Period >= 15.0
+			== [BRANCH ON Customer], info: 0.3417, size: 27
+			== Customer = Student
+				[BRANCH ON Monthly_fee], info: 1, size: 6
+				== Monthly_fee < 1.92
+					== [TERMINATE NODE] Label: 1, size:1
+				== Monthly_fee >= 1.92
+					== [TERMINATE NODE] Label: 0, size:5
+			== Customer = Business
+				[BRANCH ON Advertisement_budget], info: 1, size: 15
+				== Advertisement_budget < 0.56
+					== [TERMINATE NODE] Label: 0, size:2
+				== Advertisement_budget >= 0.56
+					== [TERMINATE NODE] Label: 1, size:13
+			== Customer = Other
+				== [TERMINATE NODE] Label: 0, size:1
+			== Customer = Doctor
+				== [TERMINATE NODE] Label: 0, size:5
+			== Customer = Professional
+				== [TERMINATE NODE] Label: 1, size:0
+	== Period >= 65.0
+		[BRANCH ON Advertisement_budget], info: 0.2474, size: 59
+		== Advertisement_budget < 0.92
+			== [TERMINATE NODE] Label: 0, size:46
+		== Advertisement_budget >= 0.92
+			[BRANCH ON Advertisement_budget], info: 0.5241, size: 13
+			== Advertisement_budget < 1.16
+				[BRANCH ON Monthly_fee], info: 0.5584, size: 9
+				== Monthly_fee < 2.31
+					== [TERMINATE NODE] Label: 1, size:1
+				== Monthly_fee >= 2.31
+					== [TERMINATE NODE] Label: 0, size:8
+			== Advertisement_budget >= 1.16
+				== [TERMINATE NODE] Label: 1, size:4
+== Advertisement_budget >= 2.4
+	== [TERMINATE NODE] Label: 1, size:65
+
+====== PREDICTION ON TEST CASES ======
+Service_type:Fund	Customer:Student	Monthly_fee:0.75	Advertisement_budget:0.93	Size:Small	Promotion:Web&Email	Interest_rate:1.0	Period:5.0	1
+Service_type:Fund	Customer:Business	Monthly_fee:1.1	Advertisement_budget:0.93	Size:Small	Promotion:Web&Email	Interest_rate:1.0	Period:65.0	1
+Service_type:Loan	Customer:Other	Monthly_fee:2.17	Advertisement_budget:3.07	Size:Small	Promotion:Full	Interest_rate:1.0	Period:89.0	1
+Service_type:Mortgage	Customer:Business	Monthly_fee:1.2	Advertisement_budget:1.17	Size:Small	Promotion:Web	Interest_rate:4.0	Period:10.0	1
+Service_type:CD	Customer:Business	Monthly_fee:1.2	Advertisement_budget:1.09	Size:Small	Promotion:Web	Interest_rate:0.0	Period:26.0	1
+Service_type:Bank_Account	Customer:Professional	Monthly_fee:2.02	Advertisement_budget:0.94	Size:Large	Promotion:None	Interest_rate:3.0	Period:15.0	1
+Service_type:Bank_Account	Customer:Doctor	Monthly_fee:4.11	Advertisement_budget:1.07	Size:Large	Promotion:Web	Interest_rate:1.0	Period:20.0	0
+Service_type:Bank_Account	Customer:Student	Monthly_fee:4.08	Advertisement_budget:0.98	Size:Large	Promotion:None	Interest_rate:0.0	Period:15.0	0
+Service_type:Loan	Customer:Business	Monthly_fee:14.17	Advertisement_budget:4.83	Size:Medium	Promotion:Web	Interest_rate:3.0	Period:84.0	1
+Service_type:Loan	Customer:Professional	Monthly_fee:11.12	Advertisement_budget:5.19	Size:Large	Promotion:Web	Interest_rate:4.0	Period:103.0	1
+Service_type:Mortgage	Customer:Professional	Monthly_fee:10.68	Advertisement_budget:6.01	Size:Large	Promotion:Web	Interest_rate:2.0	Period:85.0	1
+Service_type:Mortgage	Customer:Doctor	Monthly_fee:12.99	Advertisement_budget:5.21	Size:Medium	Promotion:Web	Interest_rate:3.0	Period:87.0	1
+Service_type:Mortgage	Customer:Business	Monthly_fee:13.65	Advertisement_budget:3.71	Size:Large	Promotion:None	Interest_rate:1.0	Period:87.0	1
+Service_type:CD	Customer:Business	Monthly_fee:5.63	Advertisement_budget:7.15	Size:Medium	Promotion:Web	Interest_rate:1.0	Period:88.0	1
+Service_type:CD	Customer:Business	Monthly_fee:6.46	Advertisement_budget:3.69	Size:Large	Promotion:Web	Interest_rate:1.0	Period:98.0	1
+Service_type:Fund	Customer:Business	Monthly_fee:2.19	Advertisement_budget:0.43	Size:Small	Promotion:Web	Interest_rate:0.0	Period:66.0	0
+Service_type:Fund	Customer:Business	Monthly_fee:2.45	Advertisement_budget:0.45	Size:Small	Promotion:Web	Interest_rate:0.0	Period:74.0	0
+Service_type:Fund	Customer:Student	Monthly_fee:2.28	Advertisement_budget:0.79	Size:Small	Promotion:Full	Interest_rate:0.0	Period:57.0	0
+Service_type:Fund	Customer:Other	Monthly_fee:1.97	Advertisement_budget:0.82	Size:Small	Promotion:None	Interest_rate:2.0	Period:67.0	0
+Service_type:CD	Customer:Business	Monthly_fee:1.71	Advertisement_budget:0.85	Size:Small	Promotion:Full	Interest_rate:0.0	Period:71.0	0
+Service_type:CD	Customer:Business	Monthly_fee:2.79	Advertisement_budget:0.76	Size:Small	Promotion:Full	Interest_rate:0.0	Period:69.0	0
+Service_type:Loan	Customer:Professional	Monthly_fee:7.97	Advertisement_budget:0.83	Size:Large	Promotion:Full	Interest_rate:2.0	Period:107.0	0
+Service_type:Loan	Customer:Professional	Monthly_fee:8.99	Advertisement_budget:1.2	Size:Large	Promotion:Full	Interest_rate:1.0	Period:104.0	1
+Service_type:Loan	Customer:Business	Monthly_fee:7.4	Advertisement_budget:1.3	Size:Large	Promotion:Full	Interest_rate:1.0	Period:115.0	1
+Service_type:Loan	Customer:Other	Monthly_fee:7.36	Advertisement_budget:1.26	Size:Large	Promotion:Web&Email	Interest_rate:1.0	Period:98.0	1
+Service_type:Loan	Customer:Student	Monthly_fee:8.66	Advertisement_budget:0.73	Size:Medium	Promotion:Web&Email	Interest_rate:0.0	Period:96.0	0
+Service_type:Mortgage	Customer:Other	Monthly_fee:6.57	Advertisement_budget:0.81	Size:Medium	Promotion:Web&Email	Interest_rate:0.0	Period:88.0	0
+Service_type:Mortgage	Customer:Student	Monthly_fee:6.74	Advertisement_budget:0.68	Size:Medium	Promotion:Web&Email	Interest_rate:1.0	Period:70.0	0
+Service_type:Mortgage	Customer:Other	Monthly_fee:5.49	Advertisement_budget:1.01	Size:Large	Promotion:Full	Interest_rate:2.0	Period:80.0	0
+Service_type:Mortgage	Customer:Business	Monthly_fee:3.9	Advertisement_budget:0.98	Size:Large	Promotion:Full	Interest_rate:0.0	Period:94.0	0
+Service_type:Loan	Customer:Professional	Monthly_fee:5.24	Advertisement_budget:3.68	Size:Small	Promotion:Web&Email	Interest_rate:4.0	Period:44.0	1
+Service_type:Mortgage	Customer:Doctor	Monthly_fee:3.7	Advertisement_budget:5.94	Size:Small	Promotion:Web	Interest_rate:3.0	Period:47.0	1
+Service_type:Fund	Customer:Other	Monthly_fee:4.81	Advertisement_budget:6.35	Size:Small	Promotion:Web	Interest_rate:5.0	Period:15.0	1
+Service_type:CD	Customer:Doctor	Monthly_fee:3.78	Advertisement_budget:4.9	Size:Small	Promotion:Full	Interest_rate:4.0	Period:53.0	1
+Service_type:Mortgage	Customer:Doctor	Monthly_fee:12.8	Advertisement_budget:5.33	Size:Large	Promotion:Web	Interest_rate:1.0	Period:92.0	1
+Service_type:CD	Customer:Business	Monthly_fee:8.29	Advertisement_budget:4.44	Size:Medium	Promotion:Full	Interest_rate:0.0	Period:86.0	1
+Service_type:CD	Customer:Business	Monthly_fee:1.87	Advertisement_budget:0.74	Size:Small	Promotion:None	Interest_rate:0.0	Period:69.0	0
+Service_type:Loan	Customer:Other	Monthly_fee:8.46	Advertisement_budget:1.14	Size:Large	Promotion:Web&Email	Interest_rate:1.0	Period:107.0	0
+Service_type:Mortgage	Customer:Professional	Monthly_fee:4.37	Advertisement_budget:0.62	Size:Large	Promotion:Full	Interest_rate:0.0	Period:98.0	0
+Service_type:Loan	Customer:Other	Monthly_fee:4.32	Advertisement_budget:4.97	Size:Small	Promotion:Full	Interest_rate:4.0	Period:46.0	1

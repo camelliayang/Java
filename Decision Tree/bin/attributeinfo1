@@ -1,0 +1,7 @@
+Type,category,student,engineer,librarian,professor,doctor
+LifeStyle,category,spend<<saving,spend<saving,spend>saving,spend>>saving
+Vacation,real
+eCredit,real
+salary,real
+property,real
+label,result,C1,C2,C3,C4,C5

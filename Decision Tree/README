@@ -1,0 +1,36 @@
+
+Decision Tree(C4.5) implemented by Team Think Tank
+
+====== README =======
+1. Usage:
+Go to bin directory, and execute the Test.java, the program will generate output in console based on file attributeinfo, trainset and testset. If you want to switch to another data set, please delete files attributeinfo, trainset and testset first and change the name of files attributeinfo1 to attributeinfo, trainset1 to trainset and testset1 to testset.
+
+File attributeinfo contains information of attributes.
+1) For category attributes, the line describing the attribute should be like:
+attribute_name, category, type1, type2, ...
+2) For real number attributes, the line describing the attribute should be like:
+attribute_name, real
+3) For label(result), the line describing the label should be like:
+label, result, label1, label2, ...
+*  The line describing label should be the last line of the file.
+** No empty lines are allowed in the file.
+
+File trainset contains training data. 
+The line describing each training data recored should be like:
+attribute1_value, attribute2_value, ... , attributen_value, label_value
+* The order of attributes should be exactly the same as attributeinfo.
+
+File testset contains testing data.
+The line describing each testing data recored should be like:
+attribute1_value, attribute2_value, ... , attributen_value, default_label_value
+*  The order of attributes should be exactly the same as attributeinfo.
+** Though testing data does not contain label for each record, an default label value should be provided at the end of each line.
+
+2. Default parameters:
+Cross validation folds: 8
+Termination size(When to terminate splitting if the size of data set on current node is too small): 4
+Pre-prune threshold(Stop splitting if the maximum info gain ratio is less than the threshold): 0.2
+
+3. Source code:
+Test is the main class, and the details of implementing the building tree algorithm resides in the buildTree() method in class DecisionTreeNode.
+
